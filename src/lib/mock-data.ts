@@ -1,4 +1,4 @@
-export type CongestionLevel = "붐빔" | "보통" | "여유";
+export type CongestionLevel = "붐빔" | "약간 붐빔" | "보통" | "여유";
 
 export type Festival = {
   id: string;
@@ -167,7 +167,7 @@ export const congestionPlaces: CongestionPlace[] = [
   {
     id: "itaewon",
     name: "이태원 관광특구",
-    level: "여유",
+    level: "약간 붐빔",
     sampleTimeLabel: "예시 시각",
     image:
       "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=200&q=80",
