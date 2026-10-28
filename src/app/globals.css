@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --secondary: #64748b;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-soft: #dbeafe;
+  --status-crowded: #ef4444;
+  --status-normal: #f59e0b;
+  --status-relaxed: #10b981;
+  --status-info: #3b82f6;
+  --nav-bg: #ffffff;
+  --chip-inactive-bg: #ffffff;
+  --chip-inactive-text: #64748b;
+  --badge-crowded-bg: #fee2e2;
+  --badge-normal-bg: #fef3c7;
+  --badge-relaxed-bg: #d1fae5;
+  --map-banner-bg: #eff6ff;
+}
+
+.dark {
+  --background: #0b0f19;
+  --surface: #151a24;
+  --text: #f8fafc;
+  --secondary: #94a3b8;
+  --border: #2a3344;
+  --primary: #2563eb;
+  --primary-soft: #1e3a5f;
+  --status-crowded: #ef4444;
+  --status-normal: #f59e0b;
+  --status-relaxed: #10b981;
+  --status-info: #3b82f6;
+  --nav-bg: #111827;
+  --chip-inactive-bg: #151a24;
+  --chip-inactive-text: #94a3b8;
+  --badge-crowded-bg: #3f1d1d;
+  --badge-normal-bg: #3f2e14;
+  --badge-relaxed-bg: #14352a;
+  --map-banner-bg: #172554;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-status-crowded: var(--status-crowded);
+  --color-status-normal: var(--status-normal);
+  --color-status-relaxed: var(--status-relaxed);
+  --color-status-info: var(--status-info);
+  --color-nav-bg: var(--nav-bg);
+  --color-chip-inactive-bg: var(--chip-inactive-bg);
+  --color-chip-inactive-text: var(--chip-inactive-text);
+  --color-badge-crowded-bg: var(--badge-crowded-bg);
+  --color-badge-normal-bg: var(--badge-normal-bg);
+  --color-badge-relaxed-bg: var(--badge-relaxed-bg);
+  --color-map-banner-bg: var(--map-banner-bg);
+  --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
+  min-height: 100dvh;
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
