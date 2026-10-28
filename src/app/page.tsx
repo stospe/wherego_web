@@ -18,13 +18,13 @@ export default function HomePage() {
     <div className="flex flex-col pb-6">
       <Header />
 
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 pt-4 md:px-8 md:pt-6">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 px-4 pt-4 md:px-8 md:pt-6 lg:gap-8">
         <HeroSection />
 
         <section>
           <SectionHeader title="이번 주말 축제" href="/festivals" />
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 lg:mx-0 lg:grid lg:snap-none lg:grid-cols-6 lg:gap-3 lg:overflow-visible lg:px-0">
-            {weekendFestivals.map((festival) => (
+          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 md:mx-0 md:grid md:snap-none md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 lg:grid-cols-4">
+            {weekendFestivals.slice(0, 4).map((festival) => (
               <FestivalCard key={festival.id} festival={festival} />
             ))}
           </div>

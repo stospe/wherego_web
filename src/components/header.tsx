@@ -6,7 +6,7 @@ import { DesktopNav } from "@/components/desktop-nav";
 export function Header() {
   return (
     <header className="border-b border-border bg-surface/95 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 md:px-8">
+      <div className="mx-auto flex h-[68px] w-full max-w-[1200px] items-center justify-between gap-4 px-4 md:px-8">
         <div className="flex min-w-0 items-center gap-6">
           <h1 className="shrink-0 text-[22px] font-bold leading-tight text-text md:text-[24px]">
             어디갈까<span className="text-primary">?</span>

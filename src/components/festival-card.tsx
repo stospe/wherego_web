@@ -2,17 +2,10 @@
 import { Heart } from "lucide-react";
 import type { Festival } from "@/lib/mock-data";
 
-const tagClass: Record<string, string> = {
-  진행중: "bg-[#EF4444] text-white",
-  무료: "bg-primary text-white",
-};
-
 export function FestivalCard({ festival }: { festival: Festival }) {
-  const tags = festival.tags.filter((tag) => tag in tagClass);
-
   return (
-    <article className="w-[248px] shrink-0 snap-start overflow-hidden rounded-2xl border border-border bg-surface lg:w-auto">
-      <div className="relative h-[140px] w-full lg:h-[120px]">
+    <article className="w-[248px] shrink-0 snap-start overflow-hidden rounded-2xl border border-border bg-surface md:w-auto">
+      <div className="relative aspect-video w-full">
         <Image
           src={festival.image}
           alt={festival.title}
@@ -20,16 +13,6 @@ export function FestivalCard({ festival }: { festival: Festival }) {
           className="object-cover"
           sizes="(min-width: 1024px) 16vw, 248px"
         />
-        <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className={`rounded-full px-2.5 py-1 text-[12px] font-semibold leading-none ${tagClass[tag]}`}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
         <button
           type="button"
           aria-label="관심 행사"
@@ -46,7 +29,7 @@ export function FestivalCard({ festival }: { festival: Festival }) {
           {festival.location}
         </p>
         <p className="truncate text-[12px] font-normal text-secondary md:text-[13px]">
-          {festival.dateRange}
+          일정 연동 예정
         </p>
       </div>
     </article>

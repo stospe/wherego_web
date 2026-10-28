@@ -37,7 +37,7 @@ const icons = {
 
 export function ThemeGrid({ themes }: { themes: ThemeItem[] }) {
   return (
-    <ul className="grid grid-cols-2 gap-3 md:grid-cols-4">
+    <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
       {themes.map((theme) => {
         const Icon = icons[theme.id as keyof typeof icons] ?? Flower2;
         const tone = toneClass[theme.tone];
@@ -46,7 +46,7 @@ export function ThemeGrid({ themes }: { themes: ThemeItem[] }) {
           <li key={theme.id}>
             <Link
               href={theme.href}
-              className={`flex min-h-[96px] flex-col justify-between rounded-2xl border p-4 ${tone.card}`}
+              className={`flex min-h-[96px] flex-col justify-between rounded-2xl border p-4 md:min-h-[84px] md:flex-row md:items-center md:justify-start md:gap-3 ${tone.card}`}
             >
               <span
                 className={`flex h-9 w-9 items-center justify-center rounded-xl ${tone.iconWrap}`}
