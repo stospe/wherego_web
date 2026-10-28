@@ -30,7 +30,6 @@ export const FILTER_CHIPS = [
   { id: "weekend", label: "이번 주말" },
   { id: "today", label: "오늘" },
   { id: "free", label: "무료 행사" },
-  { id: "region", label: "지역별", hasMenu: true },
 ] as const;
 
 /** 이번 주말 축제 — 예시 카드. 실제 진행 여부와 무관 */

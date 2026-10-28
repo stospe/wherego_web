@@ -1,46 +1,23 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Users } from "lucide-react";
-import type { CongestionLevel, CongestionPlace } from "@/lib/mock-data";
-
-const badgeStyles: Record<CongestionLevel, string> = {
-  붐빔: "bg-badge-crowded-bg text-status-crowded",
-  보통: "bg-badge-normal-bg text-status-normal",
-  여유: "bg-badge-relaxed-bg text-status-relaxed",
-};
+import { ChevronRight } from "lucide-react";
+import type { CongestionPlace } from "@/lib/mock-data";
 
 export function CongestionGrid({ places }: { places: CongestionPlace[] }) {
   return (
-    <ul className="grid grid-cols-2 gap-3">
+    <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
       {places.map((place) => (
         <li key={place.id}>
           <Link
             href={`/crowd/${place.id}`}
-            className="flex h-full gap-2.5 rounded-2xl border border-border bg-surface p-2.5 transition-colors hover:border-primary/40"
+            className="flex items-center justify-between gap-3 rounded-2xl border border-border bg-surface px-4 py-3.5 transition-colors hover:border-primary/40"
           >
-            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl">
-              <Image
-                src={place.image}
-                alt=""
-                fill
-                className="object-cover"
-                sizes="56px"
-              />
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-[13px] font-semibold leading-snug text-text">
+            <div className="min-w-0">
+              <p className="truncate text-[15px] font-semibold text-text">
                 {place.name}
               </p>
-              <p className="mt-0.5 text-[10px] text-secondary">
-                {place.sampleTimeLabel}
-              </p>
-              <span
-                className={`mt-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold ${badgeStyles[place.level]}`}
-              >
-                <Users size={11} strokeWidth={2.4} />
-                {place.level}
-              </span>
+              <p className="mt-1 text-[12px] text-secondary">데이터 준비 중</p>
             </div>
+            <ChevronRight size={18} className="shrink-0 text-secondary" />
           </Link>
         </li>
       ))}

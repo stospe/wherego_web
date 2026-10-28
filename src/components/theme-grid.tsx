@@ -28,10 +28,7 @@ export function ThemeGrid({ themes }: { themes: ThemeItem[] }) {
               className={`flex min-h-[108px] flex-col justify-between rounded-2xl p-4 transition-opacity hover:opacity-90 ${toneClass[theme.tone]}`}
             >
               <Icon size={22} strokeWidth={2.1} />
-              <div>
-                <p className="text-[15px] font-bold">{theme.label}</p>
-                <p className="mt-0.5 text-[11px] opacity-80">{theme.description}</p>
-              </div>
+              <p className="text-[15px] font-bold">{theme.label}</p>
             </Link>
           </li>
         );

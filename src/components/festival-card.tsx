@@ -13,16 +13,6 @@ export function FestivalCard({ festival }: { festival: Festival }) {
           className="object-cover"
           sizes="(min-width: 768px) 25vw, 248px"
         />
-        <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
-          {festival.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-white/92 px-2.5 py-1 text-[11px] font-semibold text-text"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
         <button
           type="button"
           aria-label="관심 행사 저장 (준비 중)"
