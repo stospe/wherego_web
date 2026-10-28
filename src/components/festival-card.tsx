@@ -1,16 +1,24 @@
 import Image from "next/image";
 import type { Festival } from "@/lib/mock-data";
 
-export function FestivalCard({ festival }: { festival: Festival }) {
+export function FestivalCard({
+  festival,
+  className = "",
+}: {
+  festival: Festival;
+  className?: string;
+}) {
   return (
-    <article className="w-[260px] shrink-0 overflow-hidden rounded-2xl border border-border bg-surface">
-      <div className="relative h-[150px] w-full">
+    <article
+      className={`w-[260px] shrink-0 overflow-hidden rounded-2xl border border-border bg-surface md:w-auto md:min-w-0 ${className}`}
+    >
+      <div className="relative h-[150px] w-full md:h-[180px]">
         <Image
           src={festival.image}
           alt={festival.title}
           fill
           className="object-cover"
-          sizes="260px"
+          sizes="(min-width: 768px) 25vw, 260px"
         />
         <div className="absolute left-3 top-3 flex gap-1.5">
           {festival.tags.map((tag) => (

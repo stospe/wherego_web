@@ -20,16 +20,29 @@ const badgeStyles: Record<
   },
 };
 
-export function CongestionList({ places }: { places: CongestionPlace[] }) {
+export function CongestionList({
+  places,
+  columns = "auto",
+}: {
+  places: CongestionPlace[];
+  columns?: "auto" | "one" | "two";
+}) {
+  const gridClass =
+    columns === "one"
+      ? "grid gap-3"
+      : columns === "two"
+        ? "grid gap-3 md:grid-cols-2"
+        : "grid gap-3 md:grid-cols-2 xl:grid-cols-3";
+
   return (
-    <ul className="space-y-3 px-4">
+    <ul className={gridClass}>
       {places.map((place) => {
         const style = badgeStyles[place.level];
         return (
           <li key={place.id}>
             <Link
               href={`/crowd/${place.id}`}
-              className="flex items-center justify-between gap-3 rounded-2xl border border-border bg-surface p-4"
+              className="flex h-full items-center justify-between gap-3 rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-primary/40"
             >
               <div className="min-w-0">
                 <p className="truncate text-[16px] font-semibold text-text">

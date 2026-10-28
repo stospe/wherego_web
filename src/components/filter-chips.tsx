@@ -7,7 +7,7 @@ export function FilterChips() {
   const [active, setActive] = useState<string>(FILTER_CHIPS[0]);
 
   return (
-    <div className="no-scrollbar flex gap-2 overflow-x-auto px-4">
+    <div className="no-scrollbar flex gap-2 overflow-x-auto">
       {FILTER_CHIPS.map((chip) => {
         const isActive = chip === active;
         return (

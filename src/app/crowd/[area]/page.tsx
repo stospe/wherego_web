@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { Header } from "@/components/header";
 
 type CrowdAreaPageProps = {
   params: Promise<{ area: string }>;
@@ -21,11 +22,20 @@ async function AreaContent({ params }: CrowdAreaPageProps) {
 
 export default function CrowdAreaPage(props: CrowdAreaPageProps) {
   return (
-    <div className="px-4 pt-6">
-      <h1 className="text-[22px] font-bold text-text">지역 상세</h1>
-      <Suspense fallback={<p className="mt-2 text-[14px] text-secondary">불러오는 중…</p>}>
-        <AreaContent {...props} />
-      </Suspense>
+    <div>
+      <Header />
+      <div className="mx-auto w-full max-w-6xl px-4 pt-6 md:px-8">
+        <h1 className="text-[22px] font-bold text-text md:text-[28px]">
+          지역 상세
+        </h1>
+        <Suspense
+          fallback={
+            <p className="mt-2 text-[14px] text-secondary">불러오는 중…</p>
+          }
+        >
+          <AreaContent {...props} />
+        </Suspense>
+      </div>
     </div>
   );
 }

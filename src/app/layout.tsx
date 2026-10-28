@@ -26,8 +26,8 @@ export default function RootLayout({
       </head>
       <body className="min-h-dvh bg-background font-sans text-text antialiased">
         <ThemeProvider>
-          <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col bg-background">
-            <main className="flex-1 pb-[88px]">{children}</main>
+          <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col bg-background md:max-w-none">
+            <main className="flex-1 pb-[88px] md:pb-10">{children}</main>
             <Suspense fallback={null}>
               <BottomNav />
             </Suspense>
