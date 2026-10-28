@@ -1,4 +1,4 @@
-import { Search } from "lucide-react";
+﻿import { Search } from "lucide-react";
 
 export function SearchBar() {
   return (
@@ -12,7 +12,7 @@ export function SearchBar() {
       <input
         type="search"
         placeholder="축제, 지역, 장소를 검색해 보세요"
-        className="h-12 w-full rounded-2xl border border-border bg-surface pl-11 pr-4 text-[14px] font-normal text-text outline-none placeholder:text-secondary focus:border-primary"
+        className="h-12 w-full rounded-2xl border border-border bg-surface pl-11 pr-4 text-[14px] font-normal text-text outline-none placeholder:text-secondary focus:border-primary md:text-[15px]"
       />
     </label>
   );

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Flower2, MoonStar, Palette, Utensils } from "lucide-react";
 import type { ThemeItem } from "@/lib/mock-data";
 
@@ -54,7 +54,9 @@ export function ThemeGrid({ themes }: { themes: ThemeItem[] }) {
                 <Icon size={18} strokeWidth={2} className={tone.icon} />
               </span>
               <div>
-                <p className="text-[16px] font-semibold text-text">{theme.label}</p>
+                <p className="text-[14px] font-semibold text-text md:text-[16px]">
+                  {theme.label}
+                </p>
                 <p className="mt-1 text-[12px] font-normal text-secondary">
                   {theme.description}
                 </p>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { SearchBar } from "@/components/search-bar";
 import { FilterChips } from "@/components/filter-chips";
 
@@ -17,10 +17,10 @@ export function HeroSection() {
 
       <div className="relative flex min-h-[220px] flex-col justify-center p-4 md:min-h-[280px] md:p-8">
         <div className="max-w-2xl">
-          <h2 className="text-[24px] font-bold leading-tight text-text">
+          <h2 className="text-[26px] font-bold leading-tight text-text md:text-[40px]">
             이번 주말, <span className="text-primary">어디 갈까?</span>
           </h2>
-          <p className="mt-2 text-[14px] font-normal text-secondary">
+          <p className="mt-2 text-[13px] font-normal text-secondary md:text-[16px]">
             전국 축제부터 실시간 혼잡도까지 한눈에
           </p>
 
@@ -33,3 +33,4 @@ export function HeroSection() {
     </section>
   );
 }
+

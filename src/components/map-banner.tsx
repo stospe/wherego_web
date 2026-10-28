@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight, MapPinned } from "lucide-react";
 
 export function MapBanner() {
@@ -13,7 +13,9 @@ export function MapBanner() {
         <MapPinned size={22} strokeWidth={2.2} />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-[16px] font-semibold text-text">지도에서 한눈에 보기</p>
+        <p className="text-[14px] font-semibold text-text md:text-[16px]">
+          지도에서 한눈에 보기
+        </p>
         <p className="mt-1 text-[12px] font-normal text-secondary">
           주변 축제와 혼잡도를 지도에서 확인
         </p>

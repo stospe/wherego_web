@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -25,7 +25,7 @@ export function DesktopNav() {
           <Link
             key={href}
             href={href}
-            className={`inline-flex h-9 items-center px-3 text-[14px] font-semibold transition-colors ${
+            className={`inline-flex h-9 items-center px-3 text-[15px] font-semibold transition-colors ${
               active ? "text-primary" : "text-secondary hover:text-text"
             }`}
           >

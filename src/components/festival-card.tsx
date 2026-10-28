@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { Heart } from "lucide-react";
 import type { Festival } from "@/lib/mock-data";
 
@@ -39,16 +39,17 @@ export function FestivalCard({ festival }: { festival: Festival }) {
         </button>
       </div>
       <div className="space-y-1 p-4">
-        <h3 className="line-clamp-2 text-[16px] font-semibold leading-snug text-text">
+        <h3 className="line-clamp-2 text-[14px] font-semibold leading-snug text-text md:text-[16px]">
           {festival.title}
         </h3>
-        <p className="truncate text-[12px] font-normal text-secondary">
+        <p className="truncate text-[13px] font-normal text-secondary md:text-[14px]">
           {festival.location}
         </p>
-        <p className="truncate text-[12px] font-normal text-secondary">
+        <p className="truncate text-[12px] font-normal text-secondary md:text-[13px]">
           {festival.dateRange}
         </p>
       </div>
     </article>
   );
 }
+

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { Users } from "lucide-react";
 import type { CongestionLevel, CongestionPlace } from "@/lib/mock-data";
@@ -28,7 +28,7 @@ export function CongestionGrid({ places }: { places: CongestionPlace[] }) {
               />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-[16px] font-semibold text-text">
+              <p className="truncate text-[13px] font-semibold text-text md:text-[14px]">
                 {place.name}
               </p>
               <span
