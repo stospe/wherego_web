@@ -2,11 +2,30 @@ import Link from "next/link";
 import { Flower2, MoonStar, Palette, Utensils } from "lucide-react";
 import type { ThemeItem } from "@/lib/mock-data";
 
-const toneClass: Record<ThemeItem["tone"], string> = {
-  pink: "bg-[#FFF1F2] text-[#BE123C] dark:bg-[#3f1d28] dark:text-[#fda4af]",
-  orange: "bg-[#FFF7ED] text-[#C2410C] dark:bg-[#3f2a14] dark:text-[#fdba74]",
-  violet: "bg-[#F5F3FF] text-[#6D28D9] dark:bg-[#2e1f4d] dark:text-[#c4b5fd]",
-  indigo: "bg-[#EEF2FF] text-[#3730A3] dark:bg-[#1e2448] dark:text-[#a5b4fc]",
+const toneClass: Record<
+  ThemeItem["tone"],
+  { card: string; iconWrap: string; icon: string }
+> = {
+  pink: {
+    card: "border-border bg-surface hover:border-[#94A3B8]/50",
+    iconWrap: "bg-[#F1F5F9] dark:bg-[#1E293B]",
+    icon: "text-[#0F766E] dark:text-[#5EEAD4]",
+  },
+  orange: {
+    card: "border-border bg-surface hover:border-[#94A3B8]/50",
+    iconWrap: "bg-[#F1F5F9] dark:bg-[#1E293B]",
+    icon: "text-[#B45309] dark:text-[#FBBF24]",
+  },
+  violet: {
+    card: "border-border bg-surface hover:border-[#94A3B8]/50",
+    iconWrap: "bg-[#F1F5F9] dark:bg-[#1E293B]",
+    icon: "text-[#1D4ED8] dark:text-[#93C5FD]",
+  },
+  indigo: {
+    card: "border-border bg-surface hover:border-[#94A3B8]/50",
+    iconWrap: "bg-[#F1F5F9] dark:bg-[#1E293B]",
+    icon: "text-[#334155] dark:text-[#CBD5E1]",
+  },
 };
 
 const icons = {
@@ -21,14 +40,22 @@ export function ThemeGrid({ themes }: { themes: ThemeItem[] }) {
     <ul className="grid grid-cols-2 gap-3 md:grid-cols-4">
       {themes.map((theme) => {
         const Icon = icons[theme.id as keyof typeof icons] ?? Flower2;
+        const tone = toneClass[theme.tone];
+
         return (
           <li key={theme.id}>
             <Link
               href={theme.href}
-              className={`flex min-h-[108px] flex-col justify-between rounded-2xl p-4 transition-opacity hover:opacity-90 ${toneClass[theme.tone]}`}
+              className={`flex min-h-[104px] flex-col justify-between rounded-2xl border p-4 transition-colors ${tone.card}`}
             >
-              <Icon size={22} strokeWidth={2.1} />
-              <p className="text-[15px] font-bold">{theme.label}</p>
+              <span
+                className={`flex h-9 w-9 items-center justify-center rounded-xl ${tone.iconWrap}`}
+              >
+                <Icon size={18} strokeWidth={2} className={tone.icon} />
+              </span>
+              <p className="text-[14px] font-semibold text-text md:text-[15px]">
+                {theme.label}
+              </p>
             </Link>
           </li>
         );
