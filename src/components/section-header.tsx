@@ -39,7 +39,7 @@ export function SectionHeader({
         {href ? (
           <Link
             href={href}
-            className="inline-flex shrink-0 items-center gap-0.5 rounded-full bg-primary-soft px-3 py-1.5 text-[14px] font-semibold text-primary md:text-[15px]"
+            className="inline-flex shrink-0 items-center gap-0.5 py-1 text-[13px] font-semibold text-sky-500 transition-colors hover:text-sky-600 md:text-[14px] dark:text-sky-400 dark:hover:text-sky-300"
           >
             {linkLabel}
             <ChevronRight size={16} />
