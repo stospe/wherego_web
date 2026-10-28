@@ -18,29 +18,29 @@ export function CongestionGrid({ places }: { places: CongestionPlace[] }) {
         <li key={place.id}>
           <Link
             href={`/crowd/${place.id}`}
-            className="flex h-full min-h-[76px] items-center gap-3 rounded-2xl border border-border bg-surface p-3 transition-colors hover:border-primary/40"
+            className="flex h-full min-h-[64px] items-center gap-2 rounded-2xl border border-border bg-surface p-2 transition-colors hover:border-primary/40 md:min-h-[76px] md:gap-3 md:p-3"
           >
-            <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl">
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-[10px] md:h-12 md:w-12 md:rounded-xl">
               <Image
                 src={place.image}
                 alt=""
                 fill
                 className="object-cover"
-                sizes="48px"
+                sizes="(max-width: 767px) 40px, 48px"
               />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-[13px] font-semibold text-text md:text-[14px]">
+              <p className="truncate text-[11px] font-semibold tracking-[-0.02em] text-text md:text-[14px] md:tracking-normal">
                 {place.name}
               </p>
               <span
-                className={`mt-1.5 inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-semibold md:text-[12px] ${levelStyle[place.level]}`}
+                className={`mt-1 inline-flex whitespace-nowrap items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[9px] font-semibold md:mt-1.5 md:gap-1 md:px-2 md:py-1 md:text-[12px] ${levelStyle[place.level]}`}
               >
-                <Users size={13} strokeWidth={2.2} />
+                <Users className="h-[11px] w-[11px] md:h-[13px] md:w-[13px]" strokeWidth={2.2} />
                 {place.level}
               </span>
             </div>
-            <ChevronRight size={16} className="shrink-0 text-secondary" />
+            <ChevronRight className="h-3.5 w-3.5 shrink-0 text-secondary md:h-4 md:w-4" />
           </Link>
         </li>
       ))}
