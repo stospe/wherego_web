@@ -1,5 +1,5 @@
 import { Header } from "@/components/header";
-import { CongestionList } from "@/components/congestion-list";
+import { CongestionGrid } from "@/components/congestion-grid";
 import { congestionPlaces } from "@/lib/mock-data";
 
 export default function CrowdPage() {
@@ -11,10 +11,10 @@ export default function CrowdPage() {
           서울 실시간 혼잡도
         </h1>
         <p className="mt-2 text-[14px] text-secondary">
-          주요 장소 혼잡도 미리보기 · 상세 UI는 이후 단계에서 구현합니다.
+          주요 장소 미리보기 · 표시 등급은 예시 데이터입니다.
         </p>
-        <div className="mt-6">
-          <CongestionList places={congestionPlaces} columns="auto" />
+        <div className="mt-6 max-w-3xl">
+          <CongestionGrid places={congestionPlaces} />
         </div>
       </div>
     </div>

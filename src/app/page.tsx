@@ -1,74 +1,67 @@
 import { Header } from "@/components/header";
-import { SearchBar } from "@/components/search-bar";
-import { FilterChips } from "@/components/filter-chips";
+import { HeroSection } from "@/components/hero-section";
 import { SectionHeader } from "@/components/section-header";
 import { FestivalCard } from "@/components/festival-card";
-import { CongestionList } from "@/components/congestion-list";
+import { CongestionGrid } from "@/components/congestion-grid";
+import { TodayEventList } from "@/components/today-event-list";
+import { ThemeGrid } from "@/components/theme-grid";
 import { MapBanner } from "@/components/map-banner";
-import { congestionPlaces, featuredFestivals } from "@/lib/mock-data";
+import {
+  congestionPlaces,
+  festivalThemes,
+  todayFestivals,
+  weekendFestivals,
+} from "@/lib/mock-data";
 
 export default function HomePage() {
-  const mobileCongestion = congestionPlaces.slice(0, 3);
-
   return (
     <div className="flex flex-col pb-6">
       <Header />
 
-      <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
-        <section className="mt-5 space-y-3 md:mt-8 md:rounded-3xl md:border md:border-border md:bg-surface md:p-8">
-          <div className="hidden md:block">
-            <p className="text-[28px] font-bold leading-tight tracking-tight text-text">
-              이번 주말, 어디 갈까?
-            </p>
-            <p className="mt-2 text-[15px] text-secondary">
-              축제부터 실시간 혼잡도까지 한눈에
-            </p>
-          </div>
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-7 px-4 pt-4 md:gap-10 md:px-8 md:pt-6">
+        <HeroSection />
 
-          <div className="space-y-3 md:mt-5 md:max-w-2xl">
-            <SearchBar />
-            <FilterChips />
+        <section>
+          <SectionHeader
+            title="이번 주말 축제"
+            description="가로로 넘겨보며 관심 행사를 골라보세요 · 예시 데이터"
+            href="/festivals"
+          />
+          <div className="no-scrollbar -mx-4 flex gap-3 overflow-x-auto px-4 pb-1 md:mx-0 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 lg:grid-cols-3">
+            {weekendFestivals.map((festival) => (
+              <FestivalCard key={festival.id} festival={festival} />
+            ))}
           </div>
         </section>
 
-        <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(320px,1fr)] lg:items-start lg:gap-10">
-          <section>
-            <SectionHeader
-              title="추천 축제"
-              href="/festivals"
-              className="md:mb-4"
-            />
-            <div className="no-scrollbar -mx-4 flex gap-3 overflow-x-auto px-4 md:mx-0 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0">
-              {featuredFestivals.map((festival) => (
-                <FestivalCard key={festival.id} festival={festival} />
-              ))}
-            </div>
-            <p className="mt-2 text-[11px] text-secondary md:mt-3">
-              예시 데이터 · 실제 API 연결 예정
-            </p>
-          </section>
+        <section>
+          <SectionHeader
+            title="서울 실시간 혼잡도"
+            description="서울시 주요 장소 기준 · 등급은 예시이며 실제 수치가 아닙니다"
+            href="/crowd"
+            linkLabel="전체보기"
+          />
+          <CongestionGrid places={congestionPlaces} />
+        </section>
 
-          <section>
-            <SectionHeader
-              title="실시간 혼잡도"
-              href="/crowd"
-              className="md:mb-4"
-            />
-            <div className="lg:hidden">
-              <CongestionList places={mobileCongestion} columns="one" />
-            </div>
-            <div className="hidden lg:block">
-              <CongestionList places={congestionPlaces} columns="one" />
-            </div>
-            <p className="mt-2 text-[11px] text-secondary md:mt-3">
-              서울시 제공 혼잡도 등급 예시 · 실제 데이터 아님
-            </p>
-          </section>
-        </div>
+        <section>
+          <SectionHeader
+            title="오늘 진행 중인 행사"
+            description="목록형으로 빠르게 훑어보는 예시 행사"
+            href="/festivals?when=today"
+          />
+          <TodayEventList events={todayFestivals} />
+        </section>
 
-        <div className="mt-6 md:mt-8">
-          <MapBanner />
-        </div>
+        <section>
+          <SectionHeader
+            title="테마별 축제 탐색"
+            description="검증 가능한 분류로만 연결할 예정 · 현재는 진입 경로 예시"
+          />
+          <ThemeGrid themes={festivalThemes} />
+        </section>
+
+        <MapBanner />
       </div>
     </div>
   );

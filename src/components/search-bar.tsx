@@ -7,12 +7,12 @@ export function SearchBar() {
       <Search
         size={18}
         strokeWidth={2}
-        className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-secondary"
+        className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#64748b]"
       />
       <input
         type="search"
         placeholder="축제, 지역, 장소를 검색해 보세요"
-        className="h-12 w-full rounded-2xl border border-border bg-surface pl-11 pr-4 text-[14px] text-text outline-none placeholder:text-secondary focus:border-primary md:h-14 md:text-[15px]"
+        className="h-12 w-full rounded-2xl border border-white/40 bg-white pl-11 pr-4 text-[14px] text-[#0f172a] outline-none placeholder:text-[#64748b] focus:border-primary md:h-14 md:text-[15px]"
       />
     </label>
   );
