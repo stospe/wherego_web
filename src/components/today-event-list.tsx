@@ -1,6 +1,7 @@
-﻿import Image from "next/image";
-import Link from "next/link";
+﻿import Link from "next/link";
 import { CalendarDays, ChevronRight, Heart } from "lucide-react";
+import { EventImage } from "@/components/event-image";
+import { getFestivalImage } from "@/lib/image-policy";
 import type { Festival } from "@/lib/mock-data";
 
 export function TodayEventList({ events }: { events: Festival[] }) {
@@ -13,11 +14,9 @@ export function TodayEventList({ events }: { events: Festival[] }) {
             className="flex h-full items-center gap-3 rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-primary/40"
           >
             <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-border">
-              <Image
-                src={event.image}
-                alt=""
-                fill
-                className="object-cover"
+              <EventImage
+                src={getFestivalImage(event)}
+                alt={`${event.title} 대표 이미지`}
                 sizes="64px"
               />
             </div>

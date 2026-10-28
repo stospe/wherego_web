@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Gangwon">
+  <defs><linearGradient id="s" x2="0" y2="1"><stop stop-color="#c4dfed"/><stop offset="1" stop-color="#eef3e5"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#s)"/>
+  <path d="m0 272 122-154 95 103 112-171 119 165 76-87 116 140v92H0z" fill="#6f8b78"/>
+  <path d="m270 140 59-90 57 79-38-18-20 25-21-22z" fill="#eef6f8"/>
+  <path d="M0 302c119-32 211 31 332-5s197 22 308-2v65H0z" fill="#4e735c"/>
+  <g fill="#315b45"><path d="m87 281 29-69 29 69z"/><path d="m144 300 34-83 34 83z"/><path d="m482 297 31-76 31 76z"/></g>
+</svg>

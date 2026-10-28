@@ -33,7 +33,7 @@ export default function HomePage() {
         <section>
           <SectionHeader
             title="서울 실시간 혼잡도"
-            meta="예시 · 16:50 기준"
+            meta="예시 데이터 · 16:50 기준"
             href="/crowd"
           />
           <CongestionGrid places={congestionPlaces} />

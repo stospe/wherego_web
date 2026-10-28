@@ -1,6 +1,5 @@
-﻿import Image from "next/image";
-import Link from "next/link";
-import { ChevronRight, Users } from "lucide-react";
+﻿import Link from "next/link";
+import { ChevronRight, Clock3, MapPin, Users } from "lucide-react";
 import type { CongestionLevel, CongestionPlace } from "@/lib/mock-data";
 
 const levelStyle: Record<CongestionLevel, string> = {
@@ -18,29 +17,31 @@ export function CongestionGrid({ places }: { places: CongestionPlace[] }) {
         <li key={place.id}>
           <Link
             href={`/crowd/${place.id}`}
-            className="flex h-full min-h-[64px] items-center gap-1.5 rounded-2xl border border-border bg-surface p-1.5 transition-colors hover:border-primary/40 md:min-h-[76px] md:gap-3 md:p-3"
+            className="flex h-full min-h-[74px] flex-col justify-between rounded-2xl border border-border bg-surface p-3 transition-colors hover:border-primary/40"
           >
-            <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-[9px] md:h-12 md:w-12 md:rounded-xl">
-              <Image
-                src={place.image}
-                alt=""
-                fill
-                className="object-cover"
-                sizes="(max-width: 767px) 36px, 48px"
+            <div className="flex w-full min-w-0 items-center gap-1.5">
+              <MapPin
+                className="h-3.5 w-3.5 shrink-0 text-primary md:h-4 md:w-4"
+                strokeWidth={2.2}
               />
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-[13px] font-semibold tracking-[-0.04em] text-text md:text-[14px] md:tracking-normal">
+              <p className="min-w-0 flex-1 truncate text-[13px] font-semibold tracking-[-0.02em] text-text md:text-[14px] md:tracking-normal">
                 {place.name}
               </p>
+              <ChevronRight className="h-3.5 w-3.5 shrink-0 text-secondary md:h-4 md:w-4" />
+            </div>
+
+            <div className="mt-2 flex w-full items-center justify-between gap-1">
               <span
-                className={`mt-1 inline-flex whitespace-nowrap items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-semibold md:mt-1.5 md:gap-1 md:px-2 md:py-1 md:text-[12px] ${levelStyle[place.level]}`}
+                className={`inline-flex whitespace-nowrap items-center gap-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-semibold md:gap-1 md:px-2 md:py-1 md:text-[12px] ${levelStyle[place.level]}`}
               >
                 <Users className="h-[11px] w-[11px] md:h-[13px] md:w-[13px]" strokeWidth={2.2} />
                 {place.level}
               </span>
+              <span className="inline-flex min-w-0 items-center gap-0.5 truncate text-[10px] text-secondary md:text-[12px]">
+                <Clock3 className="h-3 w-3 shrink-0" />
+                {place.sampleTimeLabel}
+              </span>
             </div>
-            <ChevronRight className="h-3 w-3 shrink-0 text-secondary md:h-4 md:w-4" />
           </Link>
         </li>
       ))}

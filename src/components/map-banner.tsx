@@ -10,10 +10,10 @@ export function MapBanner() {
     >
       <div className="absolute inset-y-0 right-0 w-[38%]">
         <Image
-          src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=900&q=80"
-          alt=""
+          src="/images/placeholders/map-preview.svg"
+          alt="서울 지역 지도 미리보기"
           fill
-          className="object-cover opacity-75 dark:opacity-45"
+          className="object-cover opacity-90 dark:opacity-60"
           sizes="(min-width: 768px) 450px, 150px"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#eff6ff] via-[#eff6ff]/35 to-transparent dark:from-[#111c32]" />

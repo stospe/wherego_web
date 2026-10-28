@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Event image placeholder</title>
+  <desc id="desc">Used when TourAPI has no event image</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="400" cy="190" r="64" fill="#dbeafe"/>
+  <path d="M372 204v-38l56 19-56 19Z" fill="#2563eb"/>
+  <text x="400" y="292" text-anchor="middle" fill="#475569" font-family="sans-serif" font-size="25" font-weight="600">EVENT IMAGE</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Gyeonggi">
+  <defs><linearGradient id="s" x2="0" y2="1"><stop stop-color="#cfe7ef"/><stop offset="1" stop-color="#f2efe3"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#s)"/>
+  <path d="m0 260 110-93 91 72 101-128 102 121 94-77 142 112v93H0z" fill="#789b86"/>
+  <path d="m0 300 124-70 87 48 118-83 126 80 101-54 84 52v87H0z" fill="#526f5e"/>
+  <path d="M264 250h112v110H264zM286 216h68l22 34H264z" fill="#e8ded0"/>
+</svg>

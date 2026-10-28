@@ -1,16 +1,15 @@
-﻿import Image from "next/image";
-import { Heart } from "lucide-react";
+﻿import { Heart } from "lucide-react";
+import { EventImage } from "@/components/event-image";
+import { getFestivalImage } from "@/lib/image-policy";
 import type { Festival } from "@/lib/mock-data";
 
 export function FestivalCard({ festival }: { festival: Festival }) {
   return (
     <article className="w-[248px] shrink-0 snap-start overflow-hidden rounded-2xl border border-border bg-surface md:w-auto">
       <div className="relative aspect-video w-full">
-        <Image
-          src={festival.image}
+        <EventImage
+          src={getFestivalImage(festival)}
           alt={festival.title}
-          fill
-          className="object-cover"
           sizes="(min-width: 1024px) 16vw, 248px"
         />
         <button

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Incheon">
+  <defs><linearGradient id="s" x2="0" y2="1"><stop stop-color="#b8dff1"/><stop offset="1" stop-color="#eaf4f6"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#s)"/>
+  <path d="M0 247h640v113H0z" fill="#6ea6c4"/>
+  <path d="M0 286c87-38 157 35 246-5s168 25 249-8 111-7 145 8v79H0z" fill="#4f8cae"/>
+  <path d="M72 221h496v13H72z" fill="#64748b"/>
+  <path d="M154 221 255 112h18L217 221zm269 0-58-109h18l99 109z" fill="#64748b"/>
+  <path d="M258 103h109v13H258z" fill="#475569"/>
+</svg>

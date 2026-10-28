@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Jeju">
+  <defs><linearGradient id="s" x2="0" y2="1"><stop stop-color="#b9dfeb"/><stop offset="1" stop-color="#f3e9cf"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#s)"/>
+  <circle cx="515" cy="77" r="39" fill="#f5c96e"/>
+  <path d="m81 254 148-39 85-111 86 111 157 44-74 101H143z" fill="#5f8068"/>
+  <path d="m266 167 48-63 46 60-28-10-18 17-18-16z" fill="#e7eef0"/>
+  <path d="M0 284c88-32 174 28 267-1s193 24 373-8v85H0z" fill="#4b98b6"/>
+  <path d="M81 302h74l-18 58H93zM498 302h67l-12 58h-44z" fill="#2f4858"/>
+</svg>

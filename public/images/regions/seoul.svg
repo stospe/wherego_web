@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Seoul">
+  <defs><linearGradient id="s" x2="0" y2="1"><stop stop-color="#b9dcf5"/><stop offset="1" stop-color="#eef5f9"/></linearGradient></defs>
+  <rect width="640" height="360" fill="url(#s)"/>
+  <path d="M0 286h640v74H0z" fill="#8eb8d0"/>
+  <path d="M0 278h90v-94h48v94h38V143h58v135h54v-72h65v72h53V165h74v113h43V119h55v159h52v82H0z" fill="#526b7a"/>
+  <path d="M316 46h8v149h-8zM293 194h55l-11-49h-33z" fill="#334155"/>
+</svg>
