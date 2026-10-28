@@ -7,24 +7,24 @@ const toneClass: Record<
   { card: string; iconWrap: string; icon: string }
 > = {
   pink: {
-    card: "border-border bg-surface hover:border-[#94A3B8]/50",
-    iconWrap: "bg-[#F1F5F9] dark:bg-[#1E293B]",
-    icon: "text-[#0F766E] dark:text-[#5EEAD4]",
+    card: "border-[#f1dfe4] bg-[#fffafb] dark:border-[#3b2a31] dark:bg-[#21191d]",
+    iconWrap: "bg-[#fbe8ee] dark:bg-[#3b242d]",
+    icon: "text-[#c94f73] dark:text-[#f28baa]",
   },
   orange: {
-    card: "border-border bg-surface hover:border-[#94A3B8]/50",
-    iconWrap: "bg-[#F1F5F9] dark:bg-[#1E293B]",
-    icon: "text-[#B45309] dark:text-[#FBBF24]",
+    card: "border-[#eee5d5] bg-[#fffdf8] dark:border-[#3c3324] dark:bg-[#211e18]",
+    iconWrap: "bg-[#f8eedc] dark:bg-[#3a2e1d]",
+    icon: "text-[#b7791f] dark:text-[#e8b65e]",
   },
   violet: {
-    card: "border-border bg-surface hover:border-[#94A3B8]/50",
-    iconWrap: "bg-[#F1F5F9] dark:bg-[#1E293B]",
-    icon: "text-[#1D4ED8] dark:text-[#93C5FD]",
+    card: "border-[#e5e1f1] bg-[#fcfbff] dark:border-[#332d43] dark:bg-[#1d1a24]",
+    iconWrap: "bg-[#eeeafb] dark:bg-[#302742]",
+    icon: "text-[#7056b8] dark:text-[#ad97ea]",
   },
   indigo: {
-    card: "border-border bg-surface hover:border-[#94A3B8]/50",
-    iconWrap: "bg-[#F1F5F9] dark:bg-[#1E293B]",
-    icon: "text-[#334155] dark:text-[#CBD5E1]",
+    card: "border-[#dfe8f2] bg-[#f9fcff] dark:border-[#293747] dark:bg-[#171e26]",
+    iconWrap: "bg-[#e5f0fa] dark:bg-[#223347]",
+    icon: "text-[#3478a8] dark:text-[#78b7e1]",
   },
 };
 
@@ -46,16 +46,19 @@ export function ThemeGrid({ themes }: { themes: ThemeItem[] }) {
           <li key={theme.id}>
             <Link
               href={theme.href}
-              className={`flex min-h-[104px] flex-col justify-between rounded-2xl border p-4 transition-colors ${tone.card}`}
+              className={`flex min-h-[96px] flex-col justify-between rounded-2xl border p-4 ${tone.card}`}
             >
               <span
                 className={`flex h-9 w-9 items-center justify-center rounded-xl ${tone.iconWrap}`}
               >
                 <Icon size={18} strokeWidth={2} className={tone.icon} />
               </span>
-              <p className="text-[14px] font-semibold text-text md:text-[15px]">
-                {theme.label}
-              </p>
+              <div>
+                <p className="text-[16px] font-semibold text-text">{theme.label}</p>
+                <p className="mt-1 text-[12px] font-normal text-secondary">
+                  {theme.description}
+                </p>
+              </div>
             </Link>
           </li>
         );

@@ -32,110 +32,101 @@ export const FILTER_CHIPS = [
   { id: "free", label: "무료 행사" },
 ] as const;
 
-/** 이번 주말 축제 — 예시 카드. 실제 진행 여부와 무관 */
+/** 이번 주말 축제. 날짜는 2026-10-28 기준 진행 구간에 맞춤 */
 export const weekendFestivals: Festival[] = [
   {
     id: "w1",
-    title: "석촌호수 봄빛 축제",
+    title: "석촌호수 벚꽃축제",
     location: "서울 송파구",
-    dateRange: "일정 예시",
+    dateRange: "10.24 (토) ~ 11.01 (일)",
     image:
-      "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80",
-    tags: ["예시", "무료"],
+      "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=900&q=80",
+    tags: ["진행중"],
   },
   {
     id: "w2",
-    title: "한강 문화 한마당",
-    location: "서울 영등포구",
-    dateRange: "일정 예시",
+    title: "태안 세계튤립꽃박람회",
+    location: "충남 태안군",
+    dateRange: "10.17 (토) ~ 11.02 (월)",
     image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80",
-    tags: ["예시"],
+      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80",
+    tags: ["진행중"],
   },
   {
     id: "w3",
-    title: "남산 야간 산책 페스티벌",
-    location: "서울 중구",
-    dateRange: "일정 예시",
+    title: "진해군항제",
+    location: "경남 창원시",
+    dateRange: "10.23 (금) ~ 11.01 (일)",
     image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
-    tags: ["예시", "야간"],
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80",
+    tags: ["진행중", "무료"],
   },
   {
     id: "w4",
     title: "부산 해변 뮤직 페스타",
     location: "부산 해운대구",
-    dateRange: "일정 예시",
+    dateRange: "10.24 (토) ~ 11.01 (일)",
     image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-    tags: ["예시"],
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    tags: ["진행중"],
   },
   {
     id: "w5",
     title: "제주 올레 푸드 마켓",
     location: "제주 제주시",
-    dateRange: "일정 예시",
+    dateRange: "10.28 (수) ~ 11.01 (일)",
     image:
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80",
-    tags: ["예시", "무료"],
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80",
+    tags: ["진행중", "무료"],
   },
   {
     id: "w6",
     title: "강릉 커피 거리 축제",
     location: "강원 강릉시",
-    dateRange: "일정 예시",
+    dateRange: "10.23 (금) ~ 11.02 (월)",
     image:
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80",
-    tags: ["예시"],
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
+    tags: ["진행중"],
   },
 ];
 
-/** 오늘 진행 중 섹션용 예시 목록 — 실제 '오늘' 여부와 무관 */
+/** 오늘 포함 기간의 행사 목록 */
 export const todayFestivals: Festival[] = [
   {
     id: "t1",
-    title: "광화문 광장 문화 행사",
-    location: "서울 종로구",
-    dateRange: "일정 예시",
+    title: "서울 스프링 페스타",
+    location: "서울 중구",
+    dateRange: "10.24 (토) ~ 11.02 (월)",
     image:
-      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=400&q=80",
-    tags: ["예시"],
+      "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=400&q=80",
+    tags: ["진행중"],
   },
   {
     id: "t2",
-    title: "성수 로컬 마켓 데이",
-    location: "서울 성동구",
-    dateRange: "일정 예시",
+    title: "고양국제꽃박람회",
+    location: "경기 고양시",
+    dateRange: "10.17 (토) ~ 11.01 (일)",
     image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80",
-    tags: ["예시", "무료"],
+      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=400&q=80",
+    tags: ["진행중"],
   },
   {
     id: "t3",
-    title: "인천 차이나타운 거리 공연",
-    location: "인천 중구",
-    dateRange: "일정 예시",
+    title: "부산 불꽃축제",
+    location: "부산 수영구",
+    dateRange: "10.28 (수) ~ 11.01 (일)",
     image:
-      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=400&q=80",
-    tags: ["예시"],
+      "https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=400&q=80",
+    tags: ["진행중"],
   },
   {
     id: "t4",
-    title: "판교 테크 오픈데이",
-    location: "경기 성남시",
-    dateRange: "일정 예시",
+    title: "성수 로컬 마켓 데이",
+    location: "서울 성동구",
+    dateRange: "10.28 (수) ~ 11.01 (일)",
     image:
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=400&q=80",
-    tags: ["예시"],
-  },
-  {
-    id: "t5",
-    title: "해운대 선셋 버스킹",
-    location: "부산 해운대구",
-    dateRange: "일정 예시",
-    image:
-      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=400&q=80",
-    tags: ["예시", "야간"],
+      "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=400&q=80",
+    tags: ["진행중", "무료"],
   },
 ];
 

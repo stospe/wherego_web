@@ -16,7 +16,7 @@ export function FilterChips() {
             key={chip.id}
             type="button"
             onClick={() => setActive(chip.id)}
-            className={`h-9 shrink-0 rounded-full px-4 text-[13px] font-semibold transition-colors ${
+            className={`h-9 shrink-0 rounded-full px-4 text-[14px] font-semibold transition-colors ${
               isActive
                 ? "bg-primary text-white"
                 : "border border-border bg-chip-inactive-bg text-chip-inactive-text"

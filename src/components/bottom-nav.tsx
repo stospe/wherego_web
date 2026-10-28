@@ -16,7 +16,7 @@ export function BottomNav() {
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-nav-bg/95 backdrop-blur-md md:hidden">
-      <div className="mx-auto flex h-[64px] max-w-lg items-stretch justify-around px-2 pb-[env(safe-area-inset-bottom)]">
+      <div className="mx-auto flex h-16 max-w-lg items-stretch justify-around px-2 pb-[env(safe-area-inset-bottom)]">
         {tabs.map(({ href, label, icon: Icon }) => {
           const active =
             href === "/"
@@ -27,7 +27,7 @@ export function BottomNav() {
             <Link
               key={href}
               href={href}
-              className={`flex min-w-[64px] flex-col items-center justify-center gap-1 text-[11px] font-semibold ${
+              className={`flex min-w-16 flex-col items-center justify-center gap-1 text-[12px] font-semibold ${
                 active ? "text-primary" : "text-secondary"
               }`}
             >

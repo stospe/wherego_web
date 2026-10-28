@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { CalendarDays, ChevronRight, Heart } from "lucide-react";
 import type { Festival } from "@/lib/mock-data";
 
 export function TodayEventList({ events }: { events: Festival[] }) {
   return (
-    <ul className="space-y-2.5">
+    <ul className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
       {events.map((event) => (
         <li key={event.id}>
           <Link
             href={`/festivals/${event.id}`}
-            className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-2.5 transition-colors hover:border-primary/40"
+            className="flex h-full items-center gap-3 rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-primary/40"
           >
-            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-border">
               <Image
                 src={event.image}
                 alt=""
@@ -22,14 +22,26 @@ export function TodayEventList({ events }: { events: Festival[] }) {
               />
             </div>
             <div className="min-w-0 flex-1">
-              <h3 className="truncate text-[14px] font-semibold text-text">
-                {event.title}
-              </h3>
-              <p className="mt-1 text-[12px] text-secondary">
-                {event.location} · {event.dateRange}
+              <div className="flex min-w-0 items-center gap-2">
+                <h3 className="truncate text-[16px] font-semibold text-text">
+                  {event.title}
+                </h3>
+                {event.tags.includes("진행중") ? (
+                  <span className="shrink-0 rounded-full bg-[#DCFCE7] px-2.5 py-1 text-[12px] font-semibold text-[#16A34A] dark:bg-[#14352a] dark:text-[#4ADE80]">
+                    진행중
+                  </span>
+                ) : null}
+              </div>
+              <p className="mt-1 text-[12px] font-normal text-secondary">
+                {event.location}
+              </p>
+              <p className="mt-1 flex items-center gap-1 text-[12px] font-normal text-secondary">
+                <CalendarDays size={12} strokeWidth={2} className="shrink-0" />
+                <span className="truncate">{event.dateRange}</span>
               </p>
             </div>
-            <ChevronRight size={16} className="shrink-0 text-secondary" />
+            <Heart size={18} strokeWidth={2} className="shrink-0 text-secondary" />
+            <ChevronRight size={18} strokeWidth={2} className="shrink-0 text-secondary" />
           </Link>
         </li>
       ))}

@@ -18,11 +18,9 @@ export function SectionHeader({
     <div className={`mb-3 ${className}`}>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <h2 className="text-[18px] font-bold text-text md:text-[20px]">
-            {title}
-          </h2>
+          <h2 className="text-[18px] font-bold text-text">{title}</h2>
           {description ? (
-            <p className="mt-1 text-[12px] leading-snug text-secondary md:text-[13px]">
+            <p className="mt-1 text-[12px] font-normal leading-snug text-secondary">
               {description}
             </p>
           ) : null}
@@ -30,7 +28,7 @@ export function SectionHeader({
         {href ? (
           <Link
             href={href}
-            className="inline-flex shrink-0 items-center gap-0.5 pt-0.5 text-[13px] font-medium text-secondary hover:text-primary"
+            className="inline-flex shrink-0 items-center gap-0.5 pt-0.5 text-[14px] font-semibold text-primary"
           >
             {linkLabel}
             <ChevronRight size={16} />

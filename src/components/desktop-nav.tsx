@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays, Home, Map, Users } from "lucide-react";
 
 const tabs = [
-  { href: "/", label: "홈", icon: Home },
-  { href: "/festivals", label: "축제", icon: CalendarDays },
-  { href: "/map", label: "지도", icon: Map },
-  { href: "/crowd", label: "혼잡도", icon: Users },
+  { href: "/", label: "홈" },
+  { href: "/festivals", label: "축제" },
+  { href: "/map", label: "지도" },
+  { href: "/crowd", label: "혼잡도" },
 ] as const;
 
 export function DesktopNav() {
@@ -16,7 +15,7 @@ export function DesktopNav() {
 
   return (
     <nav className="hidden items-center gap-1 md:flex">
-      {tabs.map(({ href, label, icon: Icon }) => {
+      {tabs.map(({ href, label }) => {
         const active =
           href === "/"
             ? pathname === "/"
@@ -26,13 +25,10 @@ export function DesktopNav() {
           <Link
             key={href}
             href={href}
-            className={`inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm font-semibold transition-colors ${
-              active
-                ? "bg-primary-soft text-primary"
-                : "text-secondary hover:bg-surface hover:text-text"
+            className={`inline-flex h-9 items-center px-3 text-[14px] font-semibold transition-colors ${
+              active ? "text-primary" : "text-secondary hover:text-text"
             }`}
           >
-            <Icon size={16} strokeWidth={active ? 2.4 : 2} />
             {label}
           </Link>
         );
